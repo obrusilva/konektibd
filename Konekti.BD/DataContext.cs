@@ -59,8 +59,8 @@ namespace Konekti.BD
         {
             SqlMapper.AddTypeMap(typeof(string), DbType.AnsiString);
             _configuration = configuration;
-            Connection = new SqlConnection($"Server={Server};DataBase={DataBase};User ID={User};Password={Password}");
             _cryptography = new kriptografo.Cryptography(configuration);
+            Connection = new SqlConnection($"Server={Server};DataBase={DataBase};User ID={User};Password={Password}");
         }
         public async Task<IEnumerable<T>> ExecuteQueryAsync<T>(string query, List<ParametersScript> param = null)
         {
